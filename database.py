@@ -55,15 +55,15 @@ class HKStockLive(Base):
 def get_database_url():
     """
     Build database URL from environment variables.
-    Supports both Railway's DATABASE_URL and individual MySQL credentials.
+    Supports both Railway's MYSQL_PUBLIC_URL and individual MySQL credentials.
     """
-    # Try Railway's DATABASE_URL first
-    database_url = os.getenv("DATABASE_URL")
+    # Try Railway's MYSQL_PUBLIC_URL first
+    database_url = os.getenv("MYSQL_PUBLIC_URL")
     if database_url:
         # Fix for SQLAlchemy 2.0+ (Railway uses mysql://, need mysql+pymysql://)
         if database_url.startswith("mysql://"):
             database_url = database_url.replace("mysql://", "mysql+pymysql://", 1)
-        logger.info("Using DATABASE_URL from environment")
+        logger.info("Using MYSQL_PUBLIC_URL from environment")
         return database_url
     
     # Fall back to individual credentials

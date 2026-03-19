@@ -77,7 +77,7 @@ The scraper stores data in a MySQL table with the following structure:
 
 1. In Railway project, go to "Variables" tab
 2. Add the following variable:
-   - `DATABASE_URL`: The MySQL connection URL from Step 1
+   - `MYSQL_PUBLIC_URL`: The MySQL connection URL from Step 1
 
 ### Step 4: Deploy
 
@@ -133,7 +133,7 @@ The scraper stores data in a MySQL table with the following structure:
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| DATABASE_URL | MySQL connection URL (Railway) | - |
+| MYSQL_PUBLIC_URL | MySQL connection URL (Railway) | - |
 | MYSQL_HOST | MySQL host | localhost |
 | MYSQL_PORT | MySQL port | 3306 |
 | MYSQL_USER | MySQL user | root |
