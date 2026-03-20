@@ -23,8 +23,8 @@ COPY app.py .
 COPY templates/ templates/
 COPY static/ static/
 
-# Expose port
-EXPOSE 8000
+# Expose port (Railway will set PORT environment variable)
+EXPOSE ${PORT:-8000}
 
 # Run the application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}
